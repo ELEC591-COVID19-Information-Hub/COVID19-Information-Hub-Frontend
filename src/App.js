@@ -1,12 +1,21 @@
-import logo from './logo.svg';
+// import "div1"
 import './App.css';
 
-function App() {
-  return (
-      <div>
+const Div1 = () => {
+    return (
+        <div>
+            This is a div
+        </div>
+    )
+}
 
-      </div>
-  );
+function App() {
+    return (
+        <div>
+            <Div1/>
+            <Div1/>
+        </div>
+    );
 }
 
 export default App;
