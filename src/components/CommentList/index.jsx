@@ -5,6 +5,8 @@ export default class CommentList extends Component {
         return (
             <ul className="comment-list">
                 <Comment/>
+                <Comment/>
+                <Comment/>
             </ul>
 
         )
