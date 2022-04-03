@@ -8,12 +8,7 @@ export default class CommentHeader extends Component {
                 <textarea cols={"60"} rows = "10" className="textBar" type = "text" id = "commentText" placeholder = "input your comment"/> &nbsp;
                 <button className = "button" id = "commentButton" >submit</button>
                 <br /><br /><br /><br />
-
             </div>
-
-
-
-
         )
     }
 }
