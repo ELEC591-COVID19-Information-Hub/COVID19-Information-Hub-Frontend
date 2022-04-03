@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
-import CommentPage from './components/CommentPage'
-import NewTopicListPage from './components/NewsTopicListPage'
+import NewsTopic from './components/NewsTopic'
+// import CommentPage from './components/CommentPage'
+// import NewsPage from './components/NewsPage'
 import './App.css';
 // import "div1"
 
@@ -17,8 +18,11 @@ function App() {
         <div>
             {/*<Div1/>*/}
             {/*<Div1/>*/}
-            <NewTopicListPage/>
-            <CommentPage/>
+            {/*<NewsPage/>*/}
+            {/*<CommentPage/>*/}
+            <NewsTopic/>
+            <NewsTopic/>
+            <NewsTopic/>
         </div>
     );
 }
