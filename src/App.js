@@ -1,30 +1,34 @@
-import React, { Component } from 'react'
+import React, {Component} from 'react'
 import NewsTopic from './components/NewsTopic'
-// import CommentPage from './components/CommentPage'
-// import NewsPage from './components/NewsPage'
 import './App.css';
-// import "div1"
-
-// const Div1 = () => {
-//     return (
-//         <div>
-//             This is a div
-//         </div>
-//     )
-// }
+import USAMap from "react-usa-map";
 
 function App() {
+    const mapHandler = (event) => {
+        alert(event.target.dataset.name);
+    }
+    let statesCustomConfig = () => {
+        return {
+            "NJ": {
+                fill: "navy",
+                clickHandler: (event) => console.log('Custom handler for NJ', event.target.dataset)
+            },
+            "NY": {
+                fill: "#CC0000"
+            }
+        };
+    };
+
     return (
         <div>
-            {/*<Div1/>*/}
-            {/*<Div1/>*/}
-            {/*<NewsPage/>*/}
-            {/*<CommentPage/>*/}
             <NewsTopic/>
             <NewsTopic/>
             <NewsTopic/>
+            <div className="App">
+                <USAMap customize={statesCustomConfig()} onClick={mapHandler}/>
+            </div>
         </div>
-    );
+    )
 }
 
 export default App;
