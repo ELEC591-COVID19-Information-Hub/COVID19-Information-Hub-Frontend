@@ -62,7 +62,7 @@ export const Post = (props) => {
                     </TextField>
                     <br/>
                     <CardActions>
-                        <Button id='add-post-btn' size="small"
+                        <Button id='add-comment-btn' size="small"
                                 onClick={() => {
                                     if (newComment !== '') {
                                         handleAddComment(newComment)

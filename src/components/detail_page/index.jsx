@@ -1,5 +1,16 @@
 import React from "react";
-import {Dialog, DialogContent, DialogTitle, IconButton, Stack, Typography} from "@mui/material";
+import {
+    Button,
+    CardActions,
+    Dialog,
+    DialogContent,
+    DialogTitle,
+    Divider,
+    IconButton,
+    Stack,
+    TextField,
+    Typography
+} from "@mui/material";
 import './index.css'
 import CloseIcon from '@mui/icons-material/Close';
 import {Title} from "@mui/icons-material";
@@ -12,7 +23,21 @@ export const DetailPage = (props) => {
     // props: Posts: [{id, title, content, author}] Comments: [{id, post_id, content, author}]
 
     let covidData = props.covidData.filter(data => name2abbr[data.state] === props.state).sort((a, b) => new Date(a) - new Date(b))
+    let [newPostContent, setNewPostContent] = React.useState('')
+    let handleAddPost = (value) => {
 
+        const data = {
+            id: Math.max(...props.posts.map(post => post.id)) + 1,
+            author: 'Jerry',
+            content: value,
+            state: props.state,
+            title: 'New post by Jerry'
+        }
+
+        props.posts.push(data)
+        props.setPosts([...props.posts])
+        setNewPostContent('')
+    }
     const data = {
         tooltip: {
             trigger: "axis",
@@ -116,6 +141,26 @@ export const DetailPage = (props) => {
                             />
                         )
                     })}
+                    <Divider/>
+                    <TextField name={"newPost"} className={"w-full"} placeholder={"Add your post here"}
+                               value={newPostContent}
+                               onChange={(event => setNewPostContent(event.target.value))} multiline rows={3}>
+                    </TextField>
+                    <br/>
+                    <CardActions>
+                        <Button id='add-post-btn' size="small"
+                                onClick={() => {
+                                    if (newPostContent !== '') {
+                                        handleAddPost(newPostContent)
+                                    }
+
+                                }}>Send</Button>
+
+                        <Button size="small" color={"error"} onClick={() => {
+                            setNewPostContent("");
+                        }}>Cancel</Button>
+
+                    </CardActions>
                 </Stack>
             </DialogContent>
         </Dialog>

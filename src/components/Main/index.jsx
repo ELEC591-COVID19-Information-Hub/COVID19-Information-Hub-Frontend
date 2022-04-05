@@ -16,6 +16,7 @@ export const Main = () => {
     const [detailPageOpen, setDetailPageOpen] = React.useState(false)
     let [detailsState, setDetailsState] = React.useState('TX');
     let [comments, setComments] = React.useState(commentData);
+    let [posts, setPosts] = React.useState(PostData)
     const handleClickOpen = () => {
         setDetailPageOpen(true);
     };
@@ -65,10 +66,12 @@ export const Main = () => {
                 </Stack>
             </Stack>
             <DetailPage open={detailPageOpen} onClose={handleClose} state={detailsState}
-                        posts={PostData.filter(post => post.state === detailsState)}
+                        posts={posts.filter(post => post.state === detailsState)}
                         comments={comments}
                         setComments={setComments}
-                        covidData={data}/>
+                        covidData={data}
+                        setPosts={setPosts}
+            />
         </div>
     )
 
