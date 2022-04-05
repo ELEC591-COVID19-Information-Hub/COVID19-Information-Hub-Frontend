@@ -12,7 +12,7 @@ import PostData from "../../data/post.json"
 import commentData from '../../data/comments.json'
 
 export const Main = () => {
-    let [date, setDate] = React.useState(new Date('2022-01-01'));
+    let [date, setDate] = React.useState(new Date('2020-06-04'));
     const [detailPageOpen, setDetailPageOpen] = React.useState(false)
     let [detailsState, setDetailsState] = React.useState('TX');
     let [comments, setComments] = React.useState(commentData);
