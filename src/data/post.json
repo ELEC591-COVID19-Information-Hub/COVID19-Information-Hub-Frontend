@@ -1,0 +1,16 @@
+[
+  {
+    "id": 1,
+    "title": "COVID-19: Taylor County adds 3 cases, 1 death Monday; Texas hospitalization under 1,000",
+    "state": "TX",
+    "content": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi sit amet faucibus ante. Ut a mi purus. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae; Aenean egestas tincidunt augue, nec condimentum sem sagittis et. Curabitur vehicula pharetra malesuada. Pellentesque nec libero mattis, finibus orci eu, euismod tortor. In ullamcorper augue ac ante posuere dapibus. Suspendisse potenti. In sed vestibulum velit. Donec posuere, mi quis sodales dignissim, arcu lectus consequat augue, eu iaculis magna nisi at erat. Integer eu felis nulla. Sed non tempus purus. Donec cursus metus sit amet risus congue faucibus. Fusce et pulvinar metus. Aenean lobortis sem felis. Mauris vel nunc eget neque iaculis cursus et nec nisi.",
+    "author": "Admin"
+  },
+  {
+    "id": 2,
+    "title": "COVID-19: COVID-19 declines significantly in Texas",
+    "state": "TX",
+    "content": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi sit amet faucibus ante. Ut a mi purus. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae; Aenean egestas tincidunt augue, nec condimentum sem sagittis et. Curabitur vehicula pharetra malesuada. Pellentesque nec libero mattis, finibus orci eu, euismod tortor. In ullamcorper augue ac ante posuere dapibus. Suspendisse potenti. In sed vestibulum velit. Donec posuere, mi quis sodales dignissim, arcu lectus consequat augue, eu iaculis magna nisi at erat. Integer eu felis nulla. Sed non tempus purus. Donec cursus metus sit amet risus congue faucibus. Fusce et pulvinar metus. Aenean lobortis sem felis. Mauris vel nunc eget neque iaculis cursus et nec nisi.",
+    "author": "Admin"
+  }
+]

@@ -7,9 +7,21 @@ import {LocalizationProvider} from "@mui/lab";
 import {Box, Grid, Stack, TextField} from "@mui/material";
 import ArrowBackIcon from '@mui/icons-material/ArrowBack';
 import ArrowForwardIcon from '@mui/icons-material/ArrowForward';
+import {DetailPage} from "../detail_page";
+import PostData from "../../data/post.json"
 
 export const Main = () => {
     let [date, setDate] = React.useState(new Date('2022-01-01'));
+    const [detailPageOpen, setDetailPageOpen] = React.useState(true);
+    let [detailsState, setDetailsState] = React.useState('TX');
+    const handleClickOpen = () => {
+        setDetailPageOpen(true);
+    };
+
+    const handleClose = () => {
+        setDetailPageOpen(false);
+    };
+
     // const date = "2022-01-30"
     console.log(date)
     return (
@@ -49,7 +61,8 @@ export const Main = () => {
                     }}/>
                 </Stack>
             </Stack>
-
+            <DetailPage open={detailPageOpen} onClose={handleClose} state={detailsState}
+                        posts={PostData.filter(post => post.state === detailsState)}/>
         </div>
     )
 
