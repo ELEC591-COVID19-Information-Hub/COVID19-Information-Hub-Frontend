@@ -70,7 +70,10 @@ export const Main = () => {
                         comments={comments}
                         setComments={setComments}
                         covidData={data}
-                        setPosts={setPosts}
+                        handleAddPost={(newPost) => {
+                            posts.push(newPost)
+                            setPosts([...posts])
+                        }}
             />
         </div>
     )

@@ -33,9 +33,7 @@ export const DetailPage = (props) => {
             state: props.state,
             title: 'New post by Jerry'
         }
-
-        props.posts.push(data)
-        props.setPosts([...props.posts])
+        props.handleAddPost(data)
         setNewPostContent('')
     }
     const data = {

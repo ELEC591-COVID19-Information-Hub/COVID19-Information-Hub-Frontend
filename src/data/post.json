@@ -12,5 +12,19 @@
     "state": "TX",
     "content": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi sit amet faucibus ante. Ut a mi purus. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae; Aenean egestas tincidunt augue, nec condimentum sem sagittis et. Curabitur vehicula pharetra malesuada. Pellentesque nec libero mattis, finibus orci eu, euismod tortor. In ullamcorper augue ac ante posuere dapibus. Suspendisse potenti. In sed vestibulum velit. Donec posuere, mi quis sodales dignissim, arcu lectus consequat augue, eu iaculis magna nisi at erat. Integer eu felis nulla. Sed non tempus purus. Donec cursus metus sit amet risus congue faucibus. Fusce et pulvinar metus. Aenean lobortis sem felis. Mauris vel nunc eget neque iaculis cursus et nec nisi.",
     "author": "Admin"
+  },
+  {
+    "id": 3,
+    "title": "California Ends Proof of COVID-19 Vaccination, Test Mandate for Indoor Mega Events",
+    "state": "CA",
+    "content": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi sit amet faucibus ante. Ut a mi purus. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae; Aenean egestas tincidunt augue, nec condimentum sem sagittis et. Curabitur vehicula pharetra malesuada. Pellentesque nec libero mattis, finibus orci eu, euismod tortor. In ullamcorper augue ac ante posuere dapibus. Suspendisse potenti. In sed vestibulum velit. Donec posuere, mi quis sodales dignissim, arcu lectus consequat augue, eu iaculis magna nisi at erat. Integer eu felis nulla. Sed non tempus purus. Donec cursus metus sit amet risus congue faucibus. Fusce et pulvinar metus. Aenean lobortis sem felis. Mauris vel nunc eget neque iaculis cursus et nec nisi.",
+    "author": "Admin"
+  },
+  {
+    "id": 4,
+    "title": "What’s Next for the Pandemic in California?",
+    "state": "CA",
+    "content": "Aenean est felis, congue vel cursus pulvinar, eleifend ut ex. Nam vulputate arcu at mollis aliquam. Ut metus mi, feugiat et est vel, pretium dapibus nisl. Praesent sollicitudin, dui vitae elementum interdum, erat dui hendrerit ex, tincidunt facilisis massa lorem sed nisl. Vestibulum vulputate turpis libero, sit amet bibendum nisi hendrerit ac. Etiam pharetra elementum fringilla. Phasellus enim metus, euismod ut facilisis id, hendrerit ut eros. Pellentesque auctor ullamcorper nisl at lobortis. In ut imperdiet felis. Pellentesque sed commodo urna. Suspendisse potenti. Sed nec feugiat felis. In ullamcorper dolor vel tellus pretium, sed tempor lacus ultricies.",
+    "author": "Admin"
   }
 ]
