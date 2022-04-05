@@ -6,7 +6,9 @@ export const Map = (props) => {
 
 
     const mapHandler = (event) => {
-        console.log(event.target.dataset)
+        // console.log(event.target.dataset)
+        props.setDetailsState(event.target.dataset.name)
+        props.handleClickOpen()
     }
 
     const max = Math.max(...props.data.map(data => data.cases), 1000000)
@@ -27,7 +29,6 @@ export const Map = (props) => {
         let res = {}
         for (const element of props.data) {
             console.log(element)
-
             res[name2abbr[element.state]] = {
                 fill: rgb(min, max, element.cases)
             }

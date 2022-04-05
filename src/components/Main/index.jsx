@@ -9,11 +9,13 @@ import ArrowBackIcon from '@mui/icons-material/ArrowBack';
 import ArrowForwardIcon from '@mui/icons-material/ArrowForward';
 import {DetailPage} from "../detail_page";
 import PostData from "../../data/post.json"
+import commentData from '../../data/comments.json'
 
 export const Main = () => {
     let [date, setDate] = React.useState(new Date('2022-01-01'));
-    const [detailPageOpen, setDetailPageOpen] = React.useState(true);
+    const [detailPageOpen, setDetailPageOpen] = React.useState(false)
     let [detailsState, setDetailsState] = React.useState('TX');
+    let [comments, setComments] = React.useState(commentData);
     const handleClickOpen = () => {
         setDetailPageOpen(true);
     };
@@ -30,7 +32,8 @@ export const Main = () => {
             <Stack>
                 <Grid item xs={4} style={{textAlign: "center"}}>
                     <Map date={date.toISOString().slice(0, 10)}
-                         data={data.filter((data) => data.date === date.toISOString().slice(0, 10))}/>
+                         data={data.filter((data) => data.date === date.toISOString().slice(0, 10))}
+                         setDetailsState={setDetailsState} handleClickOpen={handleClickOpen} />
                 </Grid>
 
 
@@ -62,7 +65,9 @@ export const Main = () => {
                 </Stack>
             </Stack>
             <DetailPage open={detailPageOpen} onClose={handleClose} state={detailsState}
-                        posts={PostData.filter(post => post.state === detailsState)}/>
+                        posts={PostData.filter(post => post.state === detailsState)}
+                        comments={comments}
+                        setComments={setComments}/>
         </div>
     )
 

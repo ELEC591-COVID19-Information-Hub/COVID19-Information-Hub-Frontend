@@ -23,7 +23,7 @@ export const DetailPage = (props) => {
                     {props.posts.map((value, index) => {
                         return (
                             <Post key={index} post={value}
-                                  comment={props.comments.filter(comment => comment.pid === value.id)}/>
+                                  comments={props.comments.filter(comment => comment.pid === value.id)} setComments={props.setComments}/>
                         )
                     })}
                 </Stack>
