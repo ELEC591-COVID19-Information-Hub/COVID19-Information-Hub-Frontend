@@ -118,3 +118,4 @@ dist
 
 .idea
 build
+*.DS_store

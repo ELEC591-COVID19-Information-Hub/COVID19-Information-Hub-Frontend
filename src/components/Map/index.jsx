@@ -15,11 +15,11 @@ export const Map = (props) => {
     console.log(props.data.map(data => data.cases))
     const min = Math.min(...props.data.map(data => data.cases))
     const rgb = (minimum, maximum, value) => {
-        const ratio = 2 * (value - minimum) / (maximum - minimum)
+        const ratio = 2 * ((value - minimum) / (maximum - minimum))
 
         const b = Math.floor(Math.max(0, 255 * (1 - ratio)))
-        const r = Math.floor(Math.max(0, 255 * (ratio - 1)))
-        const g = 255 - b - r
+        const r = 255
+        const g = Math.floor(Math.max(0, 255 * (1 - ratio)))
         // console.log(r.toString(16), g.toString(16), b.toString(16))
         return '#' + r.toString(16).padStart(2, '0') + g.toString(16).padStart(2, '0') + b.toString(16).padStart(2, '0')
         // return "#000000"
@@ -28,7 +28,7 @@ export const Map = (props) => {
     let statesCustomConfig = () => {
         let res = {}
         for (const element of props.data) {
-            console.log(element)
+            console.log(element.cases)
             res[name2abbr[element.state]] = {
                 fill: rgb(min, max, element.cases)
             }

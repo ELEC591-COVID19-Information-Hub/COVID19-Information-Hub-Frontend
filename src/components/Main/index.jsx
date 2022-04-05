@@ -33,7 +33,7 @@ export const Main = () => {
                 <Grid item xs={4} style={{textAlign: "center"}}>
                     <Map date={date.toISOString().slice(0, 10)}
                          data={data.filter((data) => data.date === date.toISOString().slice(0, 10))}
-                         setDetailsState={setDetailsState} handleClickOpen={handleClickOpen} />
+                         setDetailsState={setDetailsState} handleClickOpen={handleClickOpen}/>
                 </Grid>
 
 
@@ -67,7 +67,8 @@ export const Main = () => {
             <DetailPage open={detailPageOpen} onClose={handleClose} state={detailsState}
                         posts={PostData.filter(post => post.state === detailsState)}
                         comments={comments}
-                        setComments={setComments}/>
+                        setComments={setComments}
+                        covidData={data}/>
         </div>
     )
 
