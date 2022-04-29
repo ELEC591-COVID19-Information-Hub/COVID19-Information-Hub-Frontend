@@ -1,6 +1,6 @@
-// const urlPrefix = 'https://jz-blog-final-backend.herokuapp.com'
+const urlPrefix = 'https://elec591-coivd19-info-hub.herokuapp.com'
 
-const urlPrefix = 'http://localhost:3000'
+// const urlPrefix = 'http://localhost:3000'
 
 export function get(url) {
     return fetch(urlPrefix + url, {
