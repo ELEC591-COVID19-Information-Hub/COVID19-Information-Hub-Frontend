@@ -12,7 +12,6 @@ export const Map = (props) => {
     }
 
     const max = Math.max(...props.data.map(data => data.cases), 1000000)
-    console.log(props.data.map(data => data.cases))
     const min = Math.min(...props.data.map(data => data.cases))
     const rgb = (minimum, maximum, value) => {
         const ratio = 2 * ((value - minimum) / (maximum - minimum))
@@ -28,7 +27,6 @@ export const Map = (props) => {
     let statesCustomConfig = () => {
         let res = {}
         for (const element of props.data) {
-            console.log(element.cases)
             res[name2abbr[element.state]] = {
                 fill: rgb(min, max, element.cases)
             }

@@ -16,6 +16,8 @@ export const Main = () => {
     const [detailPageOpen, setDetailPageOpen] = React.useState(false)
     let [detailsState, setDetailsState] = React.useState('TX');
     let [comments, setComments] = React.useState(commentData);
+
+
     let [posts, setPosts] = React.useState(PostData)
     const handleClickOpen = () => {
         setDetailPageOpen(true);
@@ -25,8 +27,7 @@ export const Main = () => {
         setDetailPageOpen(false);
     };
 
-    // const date = "2022-01-30"
-    console.log(date)
+
     return (
         <div>
 
