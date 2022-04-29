@@ -27,11 +27,10 @@ export const DetailPage = (props) => {
     let handleAddPost = (value) => {
 
         const data = {
-            id: Math.max(...props.posts.map(post => post.id)) + 1,
-            author: 'Jerry',
-            content: value,
+            text: value,
             state: props.state,
-            title: 'New post by Jerry'
+            // TODO: Update title.
+            // title: 'New post by ' + props.currentUser
         }
         props.handleAddPost(data)
         setNewPostContent('')
@@ -133,9 +132,9 @@ export const DetailPage = (props) => {
                     />
                     {props.posts.map((value, index) => {
                         return (
-                            <Post key={index} post={value}
-                                  comments={props.comments.filter(comment => comment.pid === value.id)}
-                                  setComments={props.setComments}
+                            <Post key={index} post={value} currentUser={props.currentUser} updatePosts={() => {
+                                props.updatePosts()
+                            }}
                             />
                         )
                     })}

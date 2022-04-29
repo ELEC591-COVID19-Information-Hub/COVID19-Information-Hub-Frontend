@@ -8,17 +8,22 @@ import {Box, Grid, Stack, TextField} from "@mui/material";
 import ArrowBackIcon from '@mui/icons-material/ArrowBack';
 import ArrowForwardIcon from '@mui/icons-material/ArrowForward';
 import {DetailPage} from "../detail_page";
-import PostData from "../../data/post.json"
-import commentData from '../../data/comments.json'
+import {get, post} from "../../util";
 
-export const Main = () => {
+
+export const Main = (props) => {
     let [date, setDate] = React.useState(new Date('2020-06-04'));
     const [detailPageOpen, setDetailPageOpen] = React.useState(false)
     let [detailsState, setDetailsState] = React.useState('TX');
-    let [comments, setComments] = React.useState(commentData);
+    let [comments, setComments] = React.useState([]);
+    let [posts, setPosts] = React.useState([])
+    let updatePosts = (state) => {
+        get("/articles/" + state).then(res => {
+            console.log(res)
+            setPosts([...res])
+        })
 
-
-    let [posts, setPosts] = React.useState(PostData)
+    }
     const handleClickOpen = () => {
         setDetailPageOpen(true);
     };
@@ -35,7 +40,10 @@ export const Main = () => {
                 <Grid item xs={4} style={{textAlign: "center"}}>
                     <Map date={date.toISOString().slice(0, 10)}
                          data={data.filter((data) => data.date === date.toISOString().slice(0, 10))}
-                         setDetailsState={setDetailsState} handleClickOpen={handleClickOpen}/>
+                         setDetailsState={(name) => {
+                             setDetailsState(name)
+                             updatePosts(name)
+                         }} handleClickOpen={handleClickOpen}/>
                 </Grid>
 
 
@@ -72,9 +80,16 @@ export const Main = () => {
                         setComments={setComments}
                         covidData={data}
                         handleAddPost={(newPost) => {
-                            posts.push(newPost)
-                            setPosts([...posts])
+                            console.log(newPost)
+                            post('/article', newPost).then(r => {
+                                console.log('updating')
+                                updatePosts(detailsState);
+                            })
                         }}
+                        updatePosts={r => {
+                            updatePosts(detailsState)
+                        }}
+                        currentUser={props.currentUser}
             />
         </div>
     )

@@ -75,7 +75,7 @@ function App() {
             </Box>
 
             {displayLoginPage ? <LoginPage setUsername={setUsername} setDisplayLoginPage={setDisplayLoginPage}/> :
-                <Main username={username}/>}
+                <Main currentUser={username}/>}
         </div>
     )
 }

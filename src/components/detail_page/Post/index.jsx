@@ -10,6 +10,7 @@ import {
     Typography
 } from "@mui/material";
 import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
+import {post, put} from "../../../util";
 
 export const Post = (props) => {
     // props: post,comment
@@ -17,14 +18,14 @@ export const Post = (props) => {
     const handleAddComment = (value) => {
         console.log(value)
         const data = {
-            id: Math.max(...props.comments.map(comment => comment.id) + 1),
-            author: 'Jerry',
-            pid: props.post.id,
-            content: value
-        }
+            commentId: -1,
+            author: props.currentUser,
 
-        props.comments.push(data)
-        props.setComments([...props.comments])
+            text: value
+        }
+        put("/articles/" + props.post.pid, data).then(r => props.updatePosts());
+        // props.comments.push(data)
+        // props.setComments([...props.comments])
         setNewComment('')
     }
     let [newComment, setNewComment] = React.useState("")
@@ -36,19 +37,20 @@ export const Post = (props) => {
                     aria-controls="panel1a-content"
                     id="panel1a-header"
                 >
-                    <Typography>{props.post.title}</Typography>
+                    {/*TODO: handle this title thing*/}
+                    <Typography>{props.post.text.substring(0,8) + "..."}</Typography>
                 </AccordionSummary>
                 <AccordionDetails>
                     <Typography>
-                        {props.post.content}
+                        {props.post.text}
                     </Typography>
                     <br/>
-                    {props.comments.map((comment, index) => {
+                    {props.post.comments.map((comment, index) => {
                         return (
                             <Stack spacing={1} key={index}>
                                 <Divider/>
                                 <Typography>
-                                    {comment.content}
+                                    {comment.text}
                                 </Typography>
                                 <Typography variant={'body2'} align={"right"}>
                                     ---- By {comment.author}
